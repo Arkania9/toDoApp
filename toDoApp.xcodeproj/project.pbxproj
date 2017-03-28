@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		8E0FC7961E8AC602006234A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7951E8AC602006234A1 /* AppDelegate.swift */; };
-		8E0FC7981E8AC602006234A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7971E8AC602006234A1 /* ViewController.swift */; };
+		8E0FC7981E8AC602006234A1 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7971E8AC602006234A1 /* GroupsVC.swift */; };
 		8E0FC79B1E8AC602006234A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0FC7991E8AC602006234A1 /* Main.storyboard */; };
 		8E0FC79E1E8AC602006234A1 /* toDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC79C1E8AC602006234A1 /* toDoApp.xcdatamodeld */; };
 		8E0FC7A01E8AC602006234A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E0FC79F1E8AC602006234A1 /* Assets.xcassets */; };
 		8E0FC7A31E8AC602006234A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0FC7A11E8AC602006234A1 /* LaunchScreen.storyboard */; };
+		8E0FC7AC1E8AE81F006234A1 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7AA1E8AE81F006234A1 /* Group+CoreDataClass.swift */; };
+		8E0FC7AD1E8AE81F006234A1 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7AB1E8AE81F006234A1 /* Group+CoreDataProperties.swift */; };
+		8E0FC7B31E8AED1E006234A1 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7B21E8AED1E006234A1 /* GroupCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E0FC7921E8AC602006234A1 /* toDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0FC7951E8AC602006234A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E0FC7971E8AC602006234A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E0FC7971E8AC602006234A1 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		8E0FC79A1E8AC602006234A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E0FC79D1E8AC602006234A1 /* toDoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = toDoApp.xcdatamodel; sourceTree = "<group>"; };
 		8E0FC79F1E8AC602006234A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E0FC7A21E8AC602006234A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E0FC7A41E8AC602006234A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E0FC7AA1E8AE81F006234A1 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Group+CoreDataClass.swift"; path = "../Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8E0FC7AB1E8AE81F006234A1 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Group+CoreDataProperties.swift"; path = "../Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E0FC7B21E8AED1E006234A1 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,10 @@
 		8E0FC7941E8AC602006234A1 /* toDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E0FC7AE1E8AECE7006234A1 /* Model */,
+				8E0FC7B11E8AED08006234A1 /* View */,
+				8E0FC7B01E8AED03006234A1 /* Controller */,
 				8E0FC7951E8AC602006234A1 /* AppDelegate.swift */,
-				8E0FC7971E8AC602006234A1 /* ViewController.swift */,
 				8E0FC7991E8AC602006234A1 /* Main.storyboard */,
 				8E0FC79F1E8AC602006234A1 /* Assets.xcassets */,
 				8E0FC7A11E8AC602006234A1 /* LaunchScreen.storyboard */,
@@ -65,6 +73,39 @@
 				8E0FC79C1E8AC602006234A1 /* toDoApp.xcdatamodeld */,
 			);
 			path = toDoApp;
+			sourceTree = "<group>";
+		};
+		8E0FC7AE1E8AECE7006234A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E0FC7AF1E8AECEE006234A1 /* NSManagedObjects */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8E0FC7AF1E8AECEE006234A1 /* NSManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				8E0FC7AA1E8AE81F006234A1 /* Group+CoreDataClass.swift */,
+				8E0FC7AB1E8AE81F006234A1 /* Group+CoreDataProperties.swift */,
+			);
+			name = NSManagedObjects;
+			sourceTree = "<group>";
+		};
+		8E0FC7B01E8AED03006234A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8E0FC7971E8AC602006234A1 /* GroupsVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8E0FC7B11E8AED08006234A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E0FC7B21E8AED1E006234A1 /* GroupCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E0FC7981E8AC602006234A1 /* ViewController.swift in Sources */,
+				8E0FC7981E8AC602006234A1 /* GroupsVC.swift in Sources */,
+				8E0FC7AC1E8AE81F006234A1 /* Group+CoreDataClass.swift in Sources */,
+				8E0FC7AD1E8AE81F006234A1 /* Group+CoreDataProperties.swift in Sources */,
+				8E0FC7B31E8AED1E006234A1 /* GroupCell.swift in Sources */,
 				8E0FC79E1E8AC602006234A1 /* toDoApp.xcdatamodeld in Sources */,
 				8E0FC7961E8AC602006234A1 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +345,7 @@
 				8E0FC7A91E8AC602006234A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
