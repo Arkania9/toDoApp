@@ -32,7 +32,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="work" translatesAutoresizingMaskIntoConstraints="NO" id="2v3-Kw-tt6">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="149" id="2CN-vC-upe"/>
-                                                        <constraint firstAttribute="width" constant="101" id="fJE-TC-0jy"/>
+                                                        <constraint firstAttribute="width" constant="149" id="fJE-TC-0jy"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkV-vI-QYy">
@@ -93,6 +93,9 @@
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="Z4T-Bs-ndg">
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="addGroup:" destination="BYZ-38-t0r" id="ZRj-1w-t6b"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

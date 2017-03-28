@@ -14,4 +14,10 @@ class GroupCell: UITableViewCell {
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
     
+    func configureGroup(group: Group) {
+        title.text = group.title
+        desc.text = group.desc
+        mainImg.image = group.image as? UIImage
+    }
+    
 }
