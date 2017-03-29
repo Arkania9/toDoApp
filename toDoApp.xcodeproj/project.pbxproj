@@ -16,6 +16,7 @@
 		8E0FC7AC1E8AE81F006234A1 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7AA1E8AE81F006234A1 /* Group+CoreDataClass.swift */; };
 		8E0FC7AD1E8AE81F006234A1 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7AB1E8AE81F006234A1 /* Group+CoreDataProperties.swift */; };
 		8E0FC7B31E8AED1E006234A1 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0FC7B21E8AED1E006234A1 /* GroupCell.swift */; };
+		8E3CAC5F1E8B98C300207F48 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CAC5E1E8B98C300207F48 /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8E0FC7AA1E8AE81F006234A1 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Group+CoreDataClass.swift"; path = "../Group+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8E0FC7AB1E8AE81F006234A1 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Group+CoreDataProperties.swift"; path = "../Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E0FC7B21E8AED1E006234A1 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		8E3CAC5E1E8B98C300207F48 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0FC7971E8AC602006234A1 /* GroupsVC.swift */,
+				8E3CAC5E1E8B98C300207F48 /* DetailsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				8E0FC7AC1E8AE81F006234A1 /* Group+CoreDataClass.swift in Sources */,
 				8E0FC7AD1E8AE81F006234A1 /* Group+CoreDataProperties.swift in Sources */,
 				8E0FC7B31E8AED1E006234A1 /* GroupCell.swift in Sources */,
+				8E3CAC5F1E8B98C300207F48 /* DetailsVC.swift in Sources */,
 				8E0FC79E1E8AC602006234A1 /* toDoApp.xcdatamodeld in Sources */,
 				8E0FC7961E8AC602006234A1 /* AppDelegate.swift in Sources */,
 			);

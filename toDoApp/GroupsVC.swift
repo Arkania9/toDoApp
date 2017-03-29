@@ -96,6 +96,15 @@ class GroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGroupDetails" {
+            if let destination = segue.destination as? DetailsVC {
+                destination.currentGroup = groups[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+    }
+    
+    
 
 }
 
