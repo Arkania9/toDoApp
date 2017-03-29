@@ -18,6 +18,7 @@ class GroupsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         loadData()
     }
     

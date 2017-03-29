@@ -16,7 +16,7 @@ class GroupCell: UITableViewCell {
     
     func configureGroup(group: Group) {
         title.text = group.title
-        desc.text = group.desc
+        desc.text = (group.desc)?.uppercased()
         mainImg.image = group.image as? UIImage
     }
     

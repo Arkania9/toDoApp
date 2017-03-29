@@ -23,8 +23,10 @@ class DetailsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        configureTopView(group: currentGroup)
         loadData()
+        tableView.tableFooterView = UIView()
+        configureTopView(group: currentGroup)
+        
     }
     
     func configureTopView(group: Group) {
@@ -84,14 +86,10 @@ extension DetailsVC: UITableViewDataSource, UITableViewDelegate {
         let taskObj = controller.object(at: indexPath)
         if taskObj.isChecked {
             taskObj.isChecked = false
-            do {
-                try context.save()
-            } catch _ {}
+            appDelegate.saveContext()
         } else {
             taskObj.isChecked = true
-            do {
-                try context.save()
-            } catch _ {}
+            appDelegate.saveContext()
         }
         selectedRow = indexPath as IndexPath
         tableView.reloadRows(at: [indexPath], with: .none)
