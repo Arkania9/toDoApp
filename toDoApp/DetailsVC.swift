@@ -31,6 +31,15 @@ class DetailsVC: UIViewController {
         groupDesc.text = group.desc
         groupImg.image = group.image as! UIImage?
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addTask" {
+            if let destination = segue.destination as? TaskVC {
+                destination.currentGroup = currentGroup
+            }
+        }
+    }
+    
 }
 
     

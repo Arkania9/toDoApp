@@ -222,7 +222,7 @@
                             <barButtonItem systemItem="add" id="dwP-b0-op6">
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Jy6-vK-kQ9" kind="show" id="Z7a-ok-Bea"/>
+                                    <segue destination="Jy6-vK-kQ9" kind="show" identifier="addTask" id="Z7a-ok-Bea"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -292,6 +292,9 @@
                                     <constraint firstAttribute="height" constant="50" id="wR3-7W-cIF"/>
                                 </constraints>
                                 <state key="normal" image="check"/>
+                                <connections>
+                                    <action selector="saveTask:" destination="Jy6-vK-kQ9" eventType="touchUpInside" id="2jt-9Y-fw2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6d-fO-BqQ">
                                 <constraints>
@@ -383,6 +386,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New task" id="4EJ-Am-93V"/>
+                    <connections>
+                        <outlet property="dateField" destination="L6d-fO-BqQ" id="vqx-dd-n0q"/>
+                        <outlet property="descField" destination="iy2-Yh-eNq" id="IpB-qK-EEk"/>
+                        <outlet property="locationField" destination="XSp-3k-TvH" id="wWn-xZ-MGI"/>
+                        <outlet property="titleField" destination="ztc-dI-ymd" id="EjB-Vo-oaq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Oa-6G-n4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
