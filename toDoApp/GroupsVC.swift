@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class GroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class GroupsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
 
-    var groups = [Group]()
+    var controller: NSFetchedResultsController<Group>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,25 +21,19 @@ class GroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         loadData()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let groupObj = groups[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell") as? GroupCell {
-            cell.configureGroup(group: groupObj)
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
     func loadData() {
         let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = nil
+        let fetchController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchController.delegate = self
+        self.controller = fetchController
+        
         do {
-            groups = try context.fetch(fetchRequest)
-            self.tableView.reloadData()
+            try fetchController.performFetch()
         } catch {
-            print("Problem with load data \(error.localizedDescription)")
+            print("Error with load data")
         }
     }
 
@@ -99,13 +93,83 @@ class GroupsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGroupDetails" {
             if let destination = segue.destination as? DetailsVC {
-                destination.currentGroup = groups[tableView.indexPathForSelectedRow!.row]
+                let indexPath = self.tableView?.indexPath(for: sender as! GroupCell)
+                destination.currentGroup = controller.object(at: indexPath!)
             }
         }
     }
-    
-    
+}
 
+
+// UITableView DataSource & Delegate
+extension GroupsVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return controller?.sections?[section].numberOfObjects ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let groupObj = controller.object(at: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell") as? GroupCell {
+            cell.configureGroup(group: groupObj)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+            case .delete:
+            context.delete(controller.object(at: indexPath))
+            do {
+                try context.save()
+            } catch {
+                print("Error with delete object")
+            }
+            break
+        default:
+            break
+        }
+    }
+}
+
+// NSFetchResultControllerDelegate
+extension GroupsVC: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch(type) {
+        case.insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        case.delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        case.update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+            break
+        case.move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        }
+    }
 }
 
 
