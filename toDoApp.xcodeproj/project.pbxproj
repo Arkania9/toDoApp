@@ -20,6 +20,7 @@
 		8E3CAC6C1E8BCB3600207F48 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CAC681E8BCB3600207F48 /* Task+CoreDataClass.swift */; };
 		8E3CAC6D1E8BCB3600207F48 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CAC691E8BCB3600207F48 /* Task+CoreDataProperties.swift */; };
 		8E3CAC6F1E8BCD3900207F48 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CAC6E1E8BCD3900207F48 /* DetailsCell.swift */; };
+		8E3CAC711E8BDB3500207F48 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3CAC701E8BDB3500207F48 /* TaskVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8E3CAC681E8BCB3600207F48 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataClass.swift"; path = "../Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8E3CAC691E8BCB3600207F48 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "../Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8E3CAC6E1E8BCD3900207F48 /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		8E3CAC701E8BDB3500207F48 /* TaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				8E0FC7971E8AC602006234A1 /* GroupsVC.swift */,
 				8E3CAC5E1E8B98C300207F48 /* DetailsVC.swift */,
+				8E3CAC701E8BDB3500207F48 /* TaskVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				8E3CAC6A1E8BCB3600207F48 /* Group+CoreDataClass.swift in Sources */,
 				8E3CAC6F1E8BCD3900207F48 /* DetailsCell.swift in Sources */,
 				8E3CAC6C1E8BCB3600207F48 /* Task+CoreDataClass.swift in Sources */,
+				8E3CAC711E8BDB3500207F48 /* TaskVC.swift in Sources */,
 				8E0FC7B31E8AED1E006234A1 /* GroupCell.swift in Sources */,
 				8E3CAC6D1E8BCB3600207F48 /* Task+CoreDataProperties.swift in Sources */,
 				8E3CAC5F1E8B98C300207F48 /* DetailsVC.swift in Sources */,
