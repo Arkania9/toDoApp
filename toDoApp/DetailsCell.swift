@@ -14,4 +14,9 @@ class DetailsCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var blackView: UIView!
 
+    func configureDetails(task: Task) {
+        name.text = task.name
+        mainImg.image = task.image as! UIImage?
+    }
+    
 }

@@ -33,6 +33,12 @@ class TaskVC: UIViewController {
         newTask.location = location
         newTask.image = UIImage(named: "unselected")
         newTask.group = currentGroup
+        do {
+            try context.save()
+        } catch {
+            print("Error with save new task")
+        }
+        _ = navigationController?.popViewController(animated: true)
     }
 
 }
