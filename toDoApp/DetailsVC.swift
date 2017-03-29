@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class DetailsVC: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var groupTitle: UILabel!
     @IBOutlet weak var groupDesc: UILabel!
     @IBOutlet weak var groupImg: UIImageView!
@@ -18,6 +19,9 @@ class DetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         configureTopView(group: currentGroup)
     }
     
@@ -27,5 +31,19 @@ class DetailsVC: UIViewController {
         groupDesc.text = group.desc
         groupImg.image = group.image as! UIImage?
     }
-
 }
+
+    
+extension DetailsVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell") as? DetailsCell {
+            return cell
+        }
+        return DetailsCell()
+    }
+}
+
