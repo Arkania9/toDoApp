@@ -20,6 +20,7 @@ extension Task {
     @NSManaged public var image: NSObject?
     @NSManaged public var date: NSDate?
     @NSManaged public var location: String?
+    @NSManaged public var isChecked: Bool
     @NSManaged public var group: Group?
 
 }

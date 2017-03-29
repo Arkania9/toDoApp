@@ -23,7 +23,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ijp-zg-iMn">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="150" id="Gae-Ri-QEg" customClass="GroupCell" customModule="toDoApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="GroupCell" rowHeight="150" id="Gae-Ri-QEg" customClass="GroupCell" customModule="toDoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gae-Ri-QEg" id="ji3-xB-Rus">
@@ -149,22 +149,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsCell" rowHeight="70" id="hyn-eL-gq7" customClass="DetailsCell" customModule="toDoApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailsCell" rowHeight="70" id="hyn-eL-gq7" customClass="DetailsCell" customModule="toDoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyn-eL-gq7" id="Bys-WN-t1c">
                                             <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected" translatesAutoresizingMaskIntoConstraints="NO" id="5Mv-YM-nhl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected" translatesAutoresizingMaskIntoConstraints="NO" id="5Mv-YM-nhl">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="69" id="Ltx-wN-F50"/>
                                                         <constraint firstAttribute="height" constant="69" id="yv2-8C-snS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmG-Tr-FS3">
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design new icons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnq-Se-Ymg">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="d2a-1M-4MQ"/>
@@ -174,21 +171,24 @@
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gS1-tF-G8R">
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5Mv-YM-nhl" firstAttribute="top" secondItem="Bys-WN-t1c" secondAttribute="top" id="866-Th-BeK"/>
                                                 <constraint firstItem="5Mv-YM-nhl" firstAttribute="leading" secondItem="Bys-WN-t1c" secondAttribute="leading" id="Apo-oi-qaa"/>
-                                                <constraint firstAttribute="trailing" secondItem="WmG-Tr-FS3" secondAttribute="trailing" id="BAG-KT-Vx5"/>
                                                 <constraint firstItem="Qnq-Se-Ymg" firstAttribute="leading" secondItem="5Mv-YM-nhl" secondAttribute="trailing" constant="16" id="JyW-Y5-Lxx"/>
-                                                <constraint firstItem="WmG-Tr-FS3" firstAttribute="top" secondItem="Bys-WN-t1c" secondAttribute="top" id="Ube-d3-nFb"/>
-                                                <constraint firstItem="WmG-Tr-FS3" firstAttribute="leading" secondItem="5Mv-YM-nhl" secondAttribute="trailing" id="Vpv-ts-V1N"/>
+                                                <constraint firstItem="gS1-tF-G8R" firstAttribute="top" secondItem="Bys-WN-t1c" secondAttribute="top" id="P4G-Vd-wMy"/>
+                                                <constraint firstAttribute="bottom" secondItem="gS1-tF-G8R" secondAttribute="bottom" id="esH-eR-htI"/>
+                                                <constraint firstItem="gS1-tF-G8R" firstAttribute="leading" secondItem="5Mv-YM-nhl" secondAttribute="trailing" id="kg7-w9-wMS"/>
+                                                <constraint firstAttribute="trailing" secondItem="gS1-tF-G8R" secondAttribute="trailing" id="nxw-GS-KaC"/>
                                                 <constraint firstItem="Qnq-Se-Ymg" firstAttribute="centerY" secondItem="Bys-WN-t1c" secondAttribute="centerY" id="rKd-Ul-Vkv"/>
-                                                <constraint firstAttribute="bottom" secondItem="WmG-Tr-FS3" secondAttribute="bottom" id="wZE-jo-Aqc"/>
                                                 <constraint firstAttribute="bottom" secondItem="5Mv-YM-nhl" secondAttribute="bottom" id="z3Q-Ks-Wk6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="blackView" destination="WmG-Tr-FS3" id="wJV-vA-sdQ"/>
+                                            <outlet property="blackView" destination="gS1-tF-G8R" id="z8H-JM-lTX"/>
                                             <outlet property="mainImg" destination="5Mv-YM-nhl" id="1t4-1f-Nhw"/>
                                             <outlet property="name" destination="Qnq-Se-Ymg" id="fxO-BR-FlM"/>
                                         </connections>
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUF-OG-rps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="36"/>
+            <point key="canvasLocation" x="1456.8" y="35.532233883058474"/>
         </scene>
         <!--New task-->
         <scene sceneID="j2g-FF-pHp">
@@ -426,7 +426,7 @@
         <image name="check" width="46" height="33"/>
         <image name="location" width="40" height="40"/>
         <image name="plus" width="44" height="44"/>
-        <image name="selected" width="130" height="130"/>
+        <image name="unselected" width="130" height="130"/>
         <image name="work" width="240" height="302"/>
     </resources>
 </document>

@@ -17,6 +17,7 @@ class DetailsVC: UIViewController {
     
     var controller: NSFetchedResultsController<Task>!
     var currentGroup: Group!
+    var selectedRow: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,24 @@ extension DetailsVC: UITableViewDataSource, UITableViewDelegate {
             cell.configureDetails(task: taskObj)
             return cell
         }
-        return DetailsCell()
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let taskObj = controller.object(at: indexPath)
+        if taskObj.isChecked {
+            taskObj.isChecked = false
+            do {
+                try context.save()
+            } catch _ {}
+        } else {
+            taskObj.isChecked = true
+            do {
+                try context.save()
+            } catch _ {}
+        }
+        selectedRow = indexPath as IndexPath
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

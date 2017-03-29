@@ -16,7 +16,13 @@ class DetailsCell: UITableViewCell {
 
     func configureDetails(task: Task) {
         name.text = task.name
-        mainImg.image = task.image as! UIImage?
+        if task.isChecked {
+            mainImg.image = UIImage(named: "selected")
+            blackView.alpha = 0.05
+        } else {
+            mainImg.image = UIImage(named: "unselected")
+            blackView.alpha = 0
+        }
     }
     
 }
