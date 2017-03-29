@@ -144,9 +144,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GB3-MV-5Re">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="hyn-eL-gq7">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyn-eL-gq7" id="Bys-WN-t1c">
+                                            <frame key="frameInset" width="375" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GB3-MV-5Re" firstAttribute="top" secondItem="uIz-Yr-LC5" secondAttribute="bottom" id="8X8-ek-j4T"/>
                             <constraint firstAttribute="trailing" secondItem="uIz-Yr-LC5" secondAttribute="trailing" id="AiT-LG-eKR"/>
                             <constraint firstItem="uIz-Yr-LC5" firstAttribute="top" secondItem="6Ai-bQ-srp" secondAttribute="bottom" id="Ec4-yS-7kc"/>
                             <constraint firstItem="r1C-lM-AX9" firstAttribute="top" secondItem="kMP-e5-Wqb" secondAttribute="bottom" constant="2" id="Fng-X2-p0g"/>
@@ -156,7 +170,10 @@
                             <constraint firstItem="r1C-lM-AX9" firstAttribute="centerX" secondItem="6zz-tb-C7u" secondAttribute="centerX" id="YnP-L3-4zo"/>
                             <constraint firstAttribute="trailing" secondItem="yW4-Uu-zM9" secondAttribute="trailing" id="oDR-Xd-C84"/>
                             <constraint firstItem="yW4-Uu-zM9" firstAttribute="top" secondItem="6Ai-bQ-srp" secondAttribute="bottom" id="p2a-ca-Nmj"/>
+                            <constraint firstItem="nxh-Gf-aPY" firstAttribute="top" secondItem="GB3-MV-5Re" secondAttribute="bottom" id="p6u-ja-RE2"/>
                             <constraint firstItem="kMP-e5-Wqb" firstAttribute="centerY" secondItem="yW4-Uu-zM9" secondAttribute="centerY" id="siS-BI-DaE"/>
+                            <constraint firstAttribute="trailing" secondItem="GB3-MV-5Re" secondAttribute="trailing" id="tuf-hR-4pP"/>
+                            <constraint firstItem="GB3-MV-5Re" firstAttribute="leading" secondItem="6zz-tb-C7u" secondAttribute="leading" id="w7Z-hz-wWB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5lS-nj-khG">

@@ -1,5 +1,5 @@
 //
-//  Group+CoreDataClass.swift
+//  Task+CoreDataClass.swift
 //  toDoApp
 //
 //  Created by Kamil Zajac on 29.03.2017.
@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Group: NSManagedObject {
+public class Task: NSManagedObject {
 
 }

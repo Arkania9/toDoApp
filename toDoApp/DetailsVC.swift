@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsVC: UIViewController {
     @IBOutlet weak var groupTitle: UILabel!
