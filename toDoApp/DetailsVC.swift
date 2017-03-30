@@ -32,7 +32,7 @@ class DetailsVC: UIViewController {
     func configureTopView(group: Group) {
         self.currentGroup = group
         groupTitle.text = group.title
-        groupDesc.text = group.desc
+        groupDesc.text = (group.desc)?.uppercased()
         groupImg.image = group.image as! UIImage?
     }
 

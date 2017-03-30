@@ -13,6 +13,7 @@ class GroupsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var tableView: UITableView!
 
     var controller: NSFetchedResultsController<Group>!
+    var fieldsEmpty = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,6 @@ class GroupsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func createNewGroup(with image: UIImage) {
         let newGroup = Group(context: context)
         newGroup.image = image
-        
         let inputAlert = UIAlertController(title: "New Group", message: "Enter a title and description.", preferredStyle: .alert)
         inputAlert.addTextField { (textField) in
             textField.placeholder = "Title"
@@ -63,12 +63,14 @@ class GroupsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         }
         
         inputAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
-            let titleTextField = inputAlert.textFields?.first
-            let descriptionTextField = inputAlert.textFields?.last
-            
-            if titleTextField?.text != "" && descriptionTextField?.text != "" {
-                newGroup.title = titleTextField?.text
-                newGroup.desc = descriptionTextField?.text
+            guard let titleField = inputAlert.textFields?.first, titleField.text != "" ,
+            let descField = inputAlert.textFields?.last, descField.text != "" else {
+                self.fieldsEmpty = true
+                return
+            }
+            newGroup.title = titleField.text
+            newGroup.desc = descField.text
+            if !self.fieldsEmpty {
                 do {
                     try context.save()
                     self.loadData()
@@ -76,7 +78,6 @@ class GroupsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                     print("Could not save data \(error.localizedDescription)")
                 }
             }
-            
         }))
         
         inputAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
