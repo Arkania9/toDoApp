@@ -23,6 +23,9 @@ class DetailsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
         loadData()
         tableView.tableFooterView = UIView()
         configureTopView(group: currentGroup)
